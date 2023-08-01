@@ -21,17 +21,24 @@ public class AdminController {
 	// First hit localhost:8080/login
 	
 	@GetMapping("/")
+	public String admin()
+	{
+		return "index";
+	}
+	
+	@GetMapping("/reg")
+	public String registration(){
+		return "reg";
+	}
+	
+	@GetMapping("/admin")
 	@ResponseBody
 	public String messageAfterLogin()
 	{
 		return "before login <br> please hit localhost:8080/login ";
 	}
 	
-	@GetMapping("/admin")
-	public String admin()
-	{
-		return "index";
-	}
+	
 	
 	@GetMapping("admin/review")
 	@ResponseBody
