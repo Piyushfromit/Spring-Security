@@ -36,8 +36,8 @@ public class SecurityConfig {
 		.and()
 		.formLogin().and()
 		.build();
-		
 	}
+	
 	@Bean
 	public PasswordEncoder passwordEncoder()
 	{
