@@ -28,10 +28,10 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin")
-	@ResponseBody
+	//@ResponseBody
 	public String admin()
 	{
-		return "Hello User I am Admin";
+		return "index";
 	}
 	
 	@GetMapping("admin/review")
