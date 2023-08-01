@@ -7,16 +7,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Page</title>
   <style>
+  
+  
+  
     body {
-      background-color: #f3d4d4;
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 20px;
+    }
+  
+   .navbar {
+      background-color: pink;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 18px 0;
+      text-align: center;
     }
 
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+  
+  
     .registration-form {
       max-width: 400px;
-      margin: 0 auto;
+      margin: 100px auto;
       background-color: #f9eaea;
       padding: 20px;
       border-radius: 5px;
@@ -28,7 +52,7 @@
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .form-group label {
@@ -38,6 +62,12 @@
     }
 
     .form-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-group select {
       width: 100%;
       padding: 8px;
       border: 1px solid #ccc;
@@ -54,16 +84,42 @@
     .form-group input[type="submit"]:hover {
       background-color: #ff4f80;
     }
+    
+    label {
+	text-align: left;
+	padding-left: 5px;
+    }
+    
   </style>
 </head>
 <body>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+
+
+
+
+
+
   <div class="registration-form">
     <h2>Registration Form</h2>
     <form action="#" method="post">
+    
       <div class="form-group">
-        <label for="username">Username</label>
+        <label  for="username">User name</label>
         <input type="text" id="username" name="username" required>
       </div>
+       <div class="form-group">
+        <label for="userrole">Role</label>
+        <select required>
+        <option>Admin</option>
+        <option>User</option>
+        </select>
+      </div> 
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>

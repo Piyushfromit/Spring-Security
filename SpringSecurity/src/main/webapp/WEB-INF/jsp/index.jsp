@@ -19,7 +19,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 10px 0;
+      padding: 18px 0;
       text-align: center;
     }
 
@@ -63,17 +63,16 @@
 
   <div class="container">
     <h1>Welcome to our website</h1>
+    
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     
     <a href="/login">
-    <button  class="button">Login</button> 
+      <button  class="button">Login</button> 
     </a>
     
     <a href="/reg">
-    
-    <button class="button">Sign In</button>
-    
-     </a>
+      <button class="button">Sign In</button>
+    </a>
     
   </div>
 </body>
