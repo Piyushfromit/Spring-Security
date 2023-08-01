@@ -28,7 +28,6 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin")
-	//@ResponseBody
 	public String admin()
 	{
 		return "index";
