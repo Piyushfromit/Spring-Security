@@ -24,19 +24,59 @@ public class SecurityConfig {
 		return new UserInfoUserDetailService();
 	}
 	
+//	@Bean
+//	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//		return http.csrf().disable()
+//		.authorizeHttpRequests()
+//		.antMatchers("/user","/new").permitAll()
+//		.and()
+//		.authorizeHttpRequests()
+//		.antMatchers("/admin/**")
+//		.authenticated()
+//		.and()
+//		.formLogin().and()
+//		.build();
+//	}
+	
+	
+//	@Bean
+//	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//	    return http
+//	        .csrf().disable()
+//	        .authorizeRequests(authorizeRequests ->
+//	            authorizeRequests
+//	                .antMatchers("/user", "/new").permitAll()
+//	                .antMatchers("/admin/**").authenticated()
+//	        )
+//	        .formLogin(formLogin ->
+//	            formLogin
+//	                .loginPage("/login") // Specify your custom login page URL
+//	                .permitAll() // Allow anyone to access the login page
+//	        )
+//	        .build();
+//	}
+	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.csrf().disable()
-		.authorizeHttpRequests()
-		.antMatchers("/user","/new").permitAll()
-		.and()
-		.authorizeHttpRequests()
-		.antMatchers("/admin/**")
-		.authenticated()
-		.and()
-		.formLogin().and()
-		.build();
+	    return http
+	        .csrf().disable()
+	        .authorizeRequests(authorizeRequests ->
+	            authorizeRequests
+	                .antMatchers("/user", "/new").permitAll()
+	                .antMatchers("/admin/**").authenticated()
+	        )
+	        .formLogin(formLogin ->
+	            formLogin
+	                .loginPage("/login") // Specify your custom login page URL
+	                .permitAll() // Allow anyone to access the login page
+	                .defaultSuccessUrl("/welcome") // Redirect to /welcome controller after successful login
+	        )
+	        .build();
 	}
+	
+	
+	
+	
 	
 	@Bean
 	public PasswordEncoder passwordEncoder()
@@ -46,9 +86,11 @@ public class SecurityConfig {
 	/*
 	 * @Bean public AuthenticationProvider authenticationProvider() {
 	 * DaoAuthenticationProvider authenticationProvider = new
-	 * DaoAuthenticationProvider();
+	 * DaoAuthenticationProvider();	
 	 * authenticationProvider.setUserDetailsService(userDetailService());
 	 * authenticationProvider.setPasswordEncoder(passwordEncoder()); return
 	 * authenticationProvider; }
 	 */
+	
+	
 }

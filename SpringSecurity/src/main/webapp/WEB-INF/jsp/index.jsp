@@ -70,7 +70,7 @@
       <button  class="button">Login</button> 
     </a>
     
-    <a href="/reg">
+    <a href="/register">
       <button class="button">Sign In</button>
     </a>
     

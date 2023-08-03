@@ -14,13 +14,14 @@ public class UserInfo {
 	private String name;
 	private String email;
 	private String password;
-	private String roles;
+	private String role;
+	private String phone;
 	
-	public String getRoles() {
-		return roles;
+	public String getRole() {
+		return role;
 	}
-	public void setRoles(String roles) {
-		this.roles = roles;
+	public void setRoles(String role) {
+		this.role = role;
 	}
 	public int getId() {
 		return id;
@@ -30,6 +31,12 @@ public class UserInfo {
 	}
 	public String getName() {
 		return name;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -46,13 +53,16 @@ public class UserInfo {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public UserInfo(int id, String name, String email, String password) {
+	public UserInfo(int id, String name, String email, String password, String phone) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.phone = phone;
 	}
+
+	
 	public UserInfo() {
 		super();
 		// TODO Auto-generated constructor stub

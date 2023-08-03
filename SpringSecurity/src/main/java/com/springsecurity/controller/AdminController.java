@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+import com.springsecurity.config.UserInfoUserDetails;
 import com.springsecurity.entity.UserInfo;
 import com.springsecurity.service.SpringService;
 
@@ -17,40 +17,70 @@ public class AdminController {
 	@Autowired
 	private SpringService service;
 	
-	
-	// First hit localhost:8080/login
-	
 	@GetMapping("/")
 	public String admin()
 	{
 		return "index";
 	}
 	
-	@GetMapping("/reg")
-	public String registration(){
-		return "reg";
+	@GetMapping("/register")
+	public String registerUser(){
+		return "register";
 	}
 	
-	@GetMapping("/admin")
-	@ResponseBody
-	public String messageAfterLogin()
+	@PostMapping("/register")
+	public String registerUser(UserInfo userInfo)
 	{
-		return "before login <br> please hit localhost:8080/login ";
+		System.out.println("registered");
+		this.service.addUser(userInfo);
+		return "register";
 	}
 	
+	@GetMapping("/login")
+	public String loginUser(){
+		return "login";
+	}
 	
+	@GetMapping("/welcome")
+	public String afterlogin(){
+		return "home";
+	}
 	
-	@GetMapping("admin/review")
-	@ResponseBody
-	public String adminReview()
+	@PostMapping("/login")
+	public String validate(UserInfo userInfo)
 	{
-		return "Valid Username and Password";
+
+		UserInfoUserDetails user = new UserInfoUserDetails(userInfo);
+		
+		return "";
+		
 	}
+	
+//	
+//	@GetMapping("/admin")
+//	@ResponseBody
+//	public String messageAfterLogin()
+//	{
+//		return "before login <br> please hit localhost:8080/login ";
+//	}
+//	
+//	
+//	
+//	@GetMapping("admin/review")
+//	@ResponseBody
+//	public String adminReview()
+//	{
+//		return "Valid Username and Password";
+//	}
+//	
 	
 	@PostMapping("/new")
 	public String addNewUser(@RequestBody UserInfo userInfo)
 	{
 		return service.addUser(userInfo);
 	}
+	
+
+	
 
 }

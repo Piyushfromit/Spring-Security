@@ -102,24 +102,15 @@
 
 
 
-
-
-
   <div class="registration-form">
     <h2>Registration Form</h2>
-    <form action="#" method="post">
+    
+    <form action="register" method="POST" >
     
       <div class="form-group">
         <label  for="username">User name</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="name" required>
       </div>
-       <div class="form-group">
-        <label for="userrole">Role</label>
-        <select required>
-        <option>Admin</option>
-        <option>User</option>
-        </select>
-      </div> 
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
@@ -128,10 +119,17 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
       </div>
-      <div class="form-group">
+    <!--   <div class="form-group">
         <label for="confirm_password">Confirm Password</label>
         <input type="password" id="confirm_password" name="confirm_password" required>
-      </div>
+      </div> -->
+      <div class="form-group">
+        <label for="userrole">role</label>
+        <select required>
+        <option>Admin</option>
+        <option>User</option>
+        </select>
+      </div> 
       <div class="form-group">
         <label for="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" required>
@@ -140,6 +138,7 @@
         <input type="submit" value="Register">
       </div>
     </form>
+    
   </div>
 </body>
 </html>
