@@ -36,43 +36,25 @@ public class AdminController {
 		return "register";
 	}
 	
-	@GetMapping("/login")
-	public String loginUser(){
-		return "login";
-	}
-	
 	@GetMapping("/welcome")
 	public String afterlogin(){
 		return "home";
 	}
-	
-	@PostMapping("/login")
-	public String validate(UserInfo userInfo)
+		
+	@GetMapping("/admin")
+	@ResponseBody
+	public String messageAfterLogin()
 	{
-
-		UserInfoUserDetails user = new UserInfoUserDetails(userInfo);
-		
-		return "";
-		
+		return "before login <br> please hit localhost:8080/login ";
 	}
 	
-//	
-//	@GetMapping("/admin")
-//	@ResponseBody
-//	public String messageAfterLogin()
-//	{
-//		return "before login <br> please hit localhost:8080/login ";
-//	}
-//	
-//	
-//	
-//	@GetMapping("admin/review")
-//	@ResponseBody
-//	public String adminReview()
-//	{
-//		return "Valid Username and Password";
-//	}
-//	
+	@GetMapping("/admin/review")
+	@ResponseBody
+	public String adminReview()
+	{
+		return "Valid Username and Password";
+	}
+	
 	
 	@PostMapping("/new")
 	public String addNewUser(@RequestBody UserInfo userInfo)
