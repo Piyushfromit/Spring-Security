@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush</title>
+  <title>Home Page</title>
   <style>
     body {
       margin: 0;
@@ -14,7 +14,7 @@
     }
 
     .navbar {
-      background-color: pink;
+      background-color: #F39C12 ;
       position: sticky;
       top: 0;
       left: 0;
@@ -64,7 +64,7 @@
   <div class="container">
     <h1>Welcome to our website</h1>
     
-     <h1>You are Successfully logedin</h1>
+     <h1>You are Successfully Signed in</h1>
     
     
     

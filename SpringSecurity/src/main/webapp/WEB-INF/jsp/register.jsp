@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Page</title>
+  <title>SignUp Page</title>
   <style>
   
   
@@ -18,7 +18,7 @@
     }
   
    .navbar {
-      background-color: pink;
+      background-color: #F39C12 ;
       position: sticky;
       top: 0;
       left: 0;
@@ -41,14 +41,14 @@
     .registration-form {
       max-width: 400px;
       margin: 100px auto;
-      background-color: #f9eaea;
+      background-color: #FEF5E7;
       padding: 20px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .registration-form h2 {
-      color: #ff699e;
+      color: #D68910;
     }
 
     .form-group {
@@ -62,27 +62,30 @@
     }
 
     .form-group input {
-      width: 100%;
+      width: 80%;
       padding: 8px;
+      margin: 4px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
     .form-group select {
-      width: 100%;
-      padding: 8px;
+      width: 85%;
+      padding: 6px;
+      margin: 4px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
 
     .form-group input[type="submit"] {
-      background-color: #ff699e;
+      background-color: #F39C12;
       color: #fff;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+      width: 25%;
+     }
 
     .form-group input[type="submit"]:hover {
-      background-color: #ff4f80;
+     background-color: #D68910;
+       box-shadow: 5px 10px 18px #888888;
     }
     
     label {
@@ -108,31 +111,27 @@
     <form action="register" method="POST" >
     
       <div class="form-group">
-        <label  for="username">User name</label>
-        <input type="text" id="username" name="name" required>
+        <input type="text" id="username" name="name" placeholder="Username" required>
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
       </div>
     <!--   <div class="form-group">
         <label for="confirm_password">Confirm Password</label>
         <input type="password" id="confirm_password" name="confirm_password" required>
       </div> -->
       <div class="form-group">
-        <label for="userrole">role</label>
-        <select required>
-        <option>Admin</option>
-        <option>User</option>
+        <select  required>
+        <option selected disabled>Choose Role</option>
+        <option value="" >Admin</option>
+        <option value="" >User</option>
         </select>
       </div> 
       <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required>
+        <input type="tel" id="phone" name="phone" placeholder="Phone No" required>
       </div>
       <div class="form-group">
         <input type="submit" value="Register">

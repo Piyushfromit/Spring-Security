@@ -43,65 +43,6 @@ public class SecurityConfig {
         return  httpSecurity.build();
     }
 	
-
-	
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http.csrf().disable()
-//            .authorizeRequests(authorizeRequests ->
-//                authorizeRequests
-//                    .antMatchers("/user", "/new").permitAll()
-//                    .antMatchers("/admin/**").authenticated()
-//            )
-//            .formLogin(formLogin ->
-//                formLogin
-//                    .defaultSuccessUrl("/welcome") // Redirect after successful login
-//            );
-//        
-//        return http.build();
-//    }
-	
-	
-	
-	
-//	@Bean
-//	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//	    return http
-//	        .csrf().disable()
-//	        .authorizeRequests(authorizeRequests ->
-//	            authorizeRequests
-//	                .antMatchers("/user", "/new").permitAll()
-//	                .antMatchers("/admin/**").authenticated()
-//	        )
-//	        .formLogin(formLogin ->
-//	            formLogin
-//	                .loginPage("/login") // Specify your custom login page URL
-//	                .permitAll() // Allow anyone to access the login page
-//	        )
-//	        .build();
-//	}
-	
-//	@Bean
-//	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//	    return http
-//	        .csrf().disable()
-//	        .authorizeRequests(authorizeRequests ->
-//	            authorizeRequests
-//	                .antMatchers("/user", "/new").permitAll()
-//	                .antMatchers("/admin/**").authenticated()
-//	        )
-//	        .formLogin(formLogin ->
-//	            formLogin
-//	                .loginPage("/login") // Specify your custom login page URL
-//	                .permitAll() // Allow anyone to access the login page
-//	                .defaultSuccessUrl("/welcome") // Redirect to /welcome controller after successful login
-//	        )
-//	        .build();
-//	}
-	
-	
-	
-	
 	
 	@Bean
 	public PasswordEncoder passwordEncoder()

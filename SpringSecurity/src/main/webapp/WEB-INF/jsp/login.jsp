@@ -1,16 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign in Page</title>
+  <title>SignIn Page</title>
   <style>
-  
-  
-  
-    body {
+     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
@@ -18,7 +15,7 @@
     }
   
    .navbar {
-      background-color: pink;
+      background-color: #F39C12 ;
       position: sticky;
       top: 0;
       left: 0;
@@ -41,14 +38,14 @@
     .login-form {
       max-width: 400px;
       margin: 100px auto;
-      background-color: #f9eaea;
+      background-color: #FEF5E7 ;
       padding: 20px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .login-form h2 {
-      color: #ff699e;
+      color: #D68910;
     }
 
     .form-group {
@@ -62,27 +59,29 @@
     }
 
     .form-group input {
-      width: 100%;
+      width: 80%;
       padding: 8px;
+      margin: 4px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
     .form-group select {
-      width: 100%;
+      width: 80%;
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
 
     .form-group input[type="submit"] {
-      background-color: #ff699e;
+      background-color: #F39C12;
       color: #fff;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      width: 25%;
     }
 
     .form-group input[type="submit"]:hover {
-      background-color: #ff4f80;
+      background-color: #D68910;
+       box-shadow: 5px 10px 18px #888888;
     }
     
     label {
@@ -104,28 +103,33 @@
 
   <div class="login-form">
     <h2>Sign In</h2>
+
+    <!-- From Document Of Spring Security  
+       Documentation Link: https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/form.html
+     -->
      
-    <!-- From Document  --> 
       	<%-- <div th:if="${param.error}">
 			Invalid username and password.</div>
 			
 		<div th:if="${param.logout}">
 			You have been logged out.</div> --%>
-			
-			
-		<form th:action="@{/login}" method="post">
-			<div>
-			<input type="text" name="username" placeholder="Username"/>
+		
+		<form th:action="login" method="post">
+			<div  class="form-group">
+			<input type="text" name="username" placeholder="Username or Email"/>
 			</div>
-			<div>
+			<div  class="form-group">
 			<input type="password" name="password" placeholder="Password"/>
 			</div>
-			<input type="submit" value="Log in" />
+			
+			 <div class="form-group">
+			<input type="submit" class="button" value="Log in" />
+			</div>
 		</form>
     
   </div>
   
-   
+  
   
 </body>
 </html>

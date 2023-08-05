@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush</title>
+  <title>Index Page</title>
   <style>
     body {
       margin: 0;
@@ -14,7 +14,7 @@
     }
 
     .navbar {
-      background-color: pink;
+      background-color: #F39C12 ;
       position: sticky;
       top: 0;
       left: 0;
@@ -39,7 +39,7 @@
     }
 
     .button {
-      background-color: pink;
+      background-color: #F39C12;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -50,7 +50,8 @@
     }
 
     .button:hover {
-      background-color: #ff6b9b;
+      background-color: #D68910;
+       box-shadow: 5px 10px 18px #888888;
     }
   </style>
 </head>
@@ -63,8 +64,8 @@
 
   <div class="container">
     <h1>Welcome to our website</h1>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <h4>Demo Website For Spring Security</h4>
+    <p>Piyush Kumar. Java Developer Trainee<p>
     
     <a href="/login">
       <button  class="button">Sign In</button> 
