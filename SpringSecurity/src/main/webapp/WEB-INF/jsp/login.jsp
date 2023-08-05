@@ -20,7 +20,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 18px 0;
+      height: 55px;
       text-align: center;
     }
 
@@ -89,14 +89,22 @@
 	padding-left: 5px;
     }
     
+    .navbarchild{
+     padding: 18px 0px;
+    
+    } 
+    
   </style>
 </head>
 <body>
 
-<div class="navbar">
+  <div class="navbar">
+    
+    <div class= "navbarchild">
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
+    </div>
   </div>
 
 
@@ -126,6 +134,7 @@
 			<input type="submit" class="button" value="Log in" />
 			</div>
 		</form>
+		<p>Don't have an account? <a href="/register">SignUp</a></p>
     
   </div>
   

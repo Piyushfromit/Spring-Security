@@ -19,8 +19,11 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 18px 0;
+      height: 55px;
       text-align: center;
+      
+      display: flex;
+       justify-content: end; 
     }
 
     .navbar a {
@@ -38,28 +41,51 @@
       margin-top: 150px;
     }
 
-    .button {
-      background-color: pink;
+    .logoutbtn {
+      background-color: #784212;
       color: white;
-      padding: 10px 20px;
+      padding: 8px 15px;
       border: none;
       border-radius: 5px;
       font-size: 16px;
       cursor: pointer;
-      margin: 10px;
+     
     }
 
-    .button:hover {
-      background-color: #ff6b9b;
+    .logoutbtn:hover {
+       background-color: #9C640C;
+       box-shadow: 5px 10px 18px #888888;
     }
+    /* .buttondiv{
+       
+    } */
+    
+    .navbarchild{
+     padding: 18px 0px;
+    
+    } 
+    
+    
   </style>
 </head>
 <body>
   <div class="navbar">
+    
+    <div class= "navbarchild">
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
-  </div>
+    </div>
+    
+    <div class="buttondiv" >
+    <a href="/logout">
+      <button class= "logoutbtn">Sign out</button> 
+    </a>
+    </div>
+    
+</div>
+  
+ 
 
   <div class="container">
     <h1>Welcome to our website</h1>

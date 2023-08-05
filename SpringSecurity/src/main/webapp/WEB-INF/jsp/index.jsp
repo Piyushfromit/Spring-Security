@@ -19,7 +19,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 18px 0;
+      height: 55px;
       text-align: center;
     }
 
@@ -38,7 +38,7 @@
       margin-top: 150px;
     }
 
-    .button {
+    .signinsignup {
       background-color: #F39C12;
       color: white;
       padding: 10px 20px;
@@ -49,17 +49,26 @@
       margin: 10px;
     }
 
-    .button:hover {
+    .signinsignup:hover {
       background-color: #D68910;
        box-shadow: 5px 10px 18px #888888;
     }
+    .navbarchild{
+     padding: 18px 0px;
+    
+    } 
+    
+    
   </style>
 </head>
 <body>
   <div class="navbar">
+    <div class= "navbarchild">
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
+    </div>
+    
   </div>
 
   <div class="container">
@@ -68,11 +77,11 @@
     <p>Piyush Kumar. Java Developer Trainee<p>
     
     <a href="/login">
-      <button  class="button">Sign In</button> 
+      <button  class="signinsignup">Sign In</button> 
     </a>
     
     <a href="/register">
-      <button class="button">Sign Up</button>
+      <button  class="signinsignup">Sign Up</button>
     </a>
     
   </div>
