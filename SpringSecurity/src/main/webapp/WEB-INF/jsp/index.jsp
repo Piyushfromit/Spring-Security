@@ -67,11 +67,11 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     
     <a href="/login">
-      <button  class="button">Login</button> 
+      <button  class="button">Sign In</button> 
     </a>
     
     <a href="/register">
-      <button class="button">Sign In</button>
+      <button class="button">Sign Up</button>
     </a>
     
   </div>

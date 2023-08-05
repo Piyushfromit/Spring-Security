@@ -103,7 +103,7 @@
 
 
   <div class="registration-form">
-    <h2>Registration Form</h2>
+    <h2>Create Account</h2>
     
     <form action="register" method="POST" >
     

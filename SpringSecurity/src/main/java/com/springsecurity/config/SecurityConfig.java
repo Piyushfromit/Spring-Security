@@ -2,8 +2,6 @@ package com.springsecurity.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -24,20 +22,28 @@ public class SecurityConfig {
 		return new UserInfoUserDetailService();
 	}
 	
+	
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.csrf().disable()
-		.authorizeHttpRequests()
-		.antMatchers("/user","/new").permitAll()
-		.and()
-		.authorizeHttpRequests()
-		.antMatchers("/admin/**","/welcome")
-		.authenticated()
-		.and()
-		.formLogin(formLogin ->
-		formLogin.defaultSuccessUrl("/welcome") )
-		.build();
-	}
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        
+        httpSecurity.csrf().disable()
+                .authorizeHttpRequests()
+                .antMatchers("/public/**","/").permitAll()
+                .and()
+                .authorizeHttpRequests()
+        		.antMatchers("/admin/**","/proadmin/**","/welcome")
+        		.authenticated()
+        		.and()
+        		.formLogin(formLogin ->
+        		 formLogin.loginPage("/login").permitAll())
+        		.formLogin(formLogin ->
+        		 formLogin.defaultSuccessUrl("/welcome") );
+               
+        
+        return  httpSecurity.build();
+    }
+	
+
 	
 //    @Bean
 //    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

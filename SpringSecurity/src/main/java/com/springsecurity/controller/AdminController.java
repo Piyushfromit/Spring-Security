@@ -36,10 +36,28 @@ public class AdminController {
 		return "register";
 	}
 	
+	@GetMapping("/login")
+	String login() {
+		return "login";
+	}
+	
 	@GetMapping("/welcome")
 	public String afterlogin(){
 		return "home";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 	@GetMapping("/admin")
 	@ResponseBody
