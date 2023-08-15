@@ -28,17 +28,20 @@ public class SecurityConfig {
         
         httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
-                .antMatchers("/public/**","/").permitAll()
+                .antMatchers("/public/**","/","/login").permitAll()
                 .and()
                 .authorizeHttpRequests()
         		.antMatchers("/admin/**","/proadmin/**","/welcome")
         		.authenticated()
         		.and()
-        		.formLogin(formLogin ->
+				
+        		 .formLogin(formLogin -> 
         		 formLogin.loginPage("/login").permitAll())
-        		.formLogin(formLogin ->
+				 .formLogin(formLogin ->
         		 formLogin.defaultSuccessUrl("/welcome") );
                
+                
+        
         
         return  httpSecurity.build();
     }
