@@ -18,19 +18,11 @@ public class SecurityConfig {
 	@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         
-        httpSecurity.csrf().disable()
-                .authorizeHttpRequests()
-                .antMatchers("/public/**","/").permitAll()
-                .and()
-                .authorizeHttpRequests()
-        		.antMatchers("/admin/**","/proadmin/**","/welcome")
-        		.authenticated()
-        		.and()
-        		.formLogin(formLogin ->
-        		 formLogin.loginPage("/login").permitAll())
-        		.formLogin(formLogin ->
-        		 formLogin.defaultSuccessUrl("/welcome") );
-               
+		httpSecurity.authorizeHttpRequests(request -> request 
+				.antMatchers("/", "/login", "/about").permitAll()
+				.anyRequest().authenticated()
+				).formLogin();
+		
         
         return  httpSecurity.build();
     }

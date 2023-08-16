@@ -11,6 +11,7 @@ import com.spring.service.UserService;
 
 
 
+
 @Controller
 public class AuthController {
 	
@@ -23,7 +24,7 @@ public class AuthController {
 	@ResponseBody
 	public String HelloMessage() {
 		
-		return "Hello Dear";
+		return "Hello Dear U Are logedin Successfully";
 	}
 	
 	@GetMapping("/")
@@ -44,6 +45,15 @@ public class AuthController {
 		return "register";
 	}
 	
+	@GetMapping("/login")
+	public String login(){
+		return "login";
+	}
+	
+	@GetMapping("/welcome")
+	public String welcome(){
+		return "home";
+	}
 	
 	
 
