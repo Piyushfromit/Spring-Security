@@ -19,21 +19,13 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         
 		httpSecurity.authorizeHttpRequests(request -> request 
-				.antMatchers("/", "/login", "/about").permitAll()
+				.antMatchers("/", "/login", "/about", "/register").permitAll()
 				.anyRequest().authenticated()
 				).formLogin();
 		
         
         return  httpSecurity.build();
     }
-	
-	
-	@Bean
-	public PasswordEncoder passwordEncoder()
-	{
-		return new BCryptPasswordEncoder();
-	}
-	
 	
 
 }
