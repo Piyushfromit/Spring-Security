@@ -24,20 +24,20 @@ public class SecurityConfiguration {
 	public void authManager(AuthenticationManagerBuilder auth) throws Exception{
 		
 		auth.jdbcAuthentication()
-		    .dataSource(dataSource)
-		    .passwordEncoder(new BCryptPasswordEncoder())
-		    .usersByUsernameQuery("select username, password, enabled from users where username=? ")
-		    .authoritiesByUsernameQuery("select username, authority from authorities where username=?");
+	    .dataSource(dataSource)
+	    .passwordEncoder(new BCryptPasswordEncoder())
+	    .usersByUsernameQuery("select email, password, enabled from users where email=?")
+	    .authoritiesByUsernameQuery("select email, authority from authority where email=?");
 		
+
 	}
-	
 	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 		
-		http.authorizeHttpRequests((req) -> req
+		http.csrf().disable().authorizeHttpRequests((req) ->req
 				
-				.antMatchers("/").permitAll()
+				.antMatchers("/", "/saveuser").permitAll()
 				.antMatchers("/admin").hasRole("ADMIN")
 				.antMatchers("/user").hasAnyRole("ADMIN", "USER")
 				.anyRequest().authenticated()
@@ -47,6 +47,7 @@ public class SecurityConfiguration {
 		return http.build();
 	}
 	
+
 	
 	
 	

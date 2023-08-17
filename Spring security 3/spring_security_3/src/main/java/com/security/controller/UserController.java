@@ -1,10 +1,22 @@
 package com.security.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.security.entity.Users;
+import com.security.service.UserService;
+
 
 @RestController
 public class UserController {
+	
+	@Autowired
+	private UserService userService;
 	
 	
 	@GetMapping("/")
@@ -21,6 +33,21 @@ public class UserController {
 	public String userProcess() {
 		return "<h1>Welcome User : </h1>";
 	}
+	
+	
+	
+	@PostMapping("/saveuser")
+	public String saveUser(@RequestBody Users user ) {
+		
+		System.out.println("inside the saveUser !");
+	  Users newUser =	userService.saveUser(user);
+		
+		return "<h1> User Saved </h1>";
+	}
+	
+	
+	
+	
 	
 
 }
