@@ -17,23 +17,7 @@ import com.security.service.UserService;
 @RestController
 public class UserController {
 	
-	@Autowired
-	private UserService userService;
 	
-	@Autowired
-	private UserRepository userRepository;
-	
-	
-	
-	@GetMapping("/")
-	public String welcomeMessage() {
-		return "<h1>Welcome to my website : </h1>";
-	}
-	
-	@GetMapping("/admin")
-	public String adminProcess() {
-		return "<h1>Welcome Admin : </h1>";
-	}
 	
 	@GetMapping("/user")
 	public String userProcess() {
@@ -42,16 +26,7 @@ public class UserController {
 	
 	
 	
-	@PostMapping("/register")
-	public String registerUser(@RequestBody Users user ) {
-		
-		if(userRepository.findByEmail(user.getEmail()).isPresent()) {
-			return "MailId already Exist";
-		}
-		final Users regUser = this.userService.registerUser(user);
-		
-		return "<h1> User Saved </h1>";
-	}
+	
 	
 	
 	
