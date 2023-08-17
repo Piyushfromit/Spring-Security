@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.security.entity.Users;
+import com.security.repository.UserRepository;
 import com.security.service.UserService;
 
 
@@ -17,6 +19,10 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
 	
 	
 	@GetMapping("/")
@@ -36,11 +42,13 @@ public class UserController {
 	
 	
 	
-	@PostMapping("/saveuser")
-	public String saveUser(@RequestBody Users user ) {
+	@PostMapping("/register")
+	public String registerUser(@RequestBody Users user ) {
 		
-		System.out.println("inside the saveUser !");
-	  Users newUser =	userService.saveUser(user);
+		if(userRepository.findByEmail(user.getEmail()).isPresent()) {
+			return "MailId already Exist";
+		}
+		final Users regUser = this.userService.registerUser(user);
 		
 		return "<h1> User Saved </h1>";
 	}
