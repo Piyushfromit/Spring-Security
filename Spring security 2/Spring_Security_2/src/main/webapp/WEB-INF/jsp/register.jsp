@@ -126,15 +126,12 @@
       <div class="form-group">
         <input type="password" id="password" name="password" placeholder="Password" required>
       </div>
-    <!--   <div class="form-group">
-        <label for="confirm_password">Confirm Password</label>
-        <input type="password" id="confirm_password" name="confirm_password" required>
-      </div> -->
-      <div class="form-group">
-        <select  required>
+      
+     <div class="form-group">
+        <select name="role"  required>
         <option selected disabled>Choose Role</option>
-        <option value="" >Admin</option>
-        <option value="" >User</option>
+        <option value="Admin" >Admin</option>
+        <option value="User" >User</option>
         </select>
       </div> 
       <div class="form-group">
