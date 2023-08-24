@@ -13,9 +13,10 @@ public class Authority {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	private String email;
 	private String authority;
+	private Integer userId;
 	
 	
 	public Authority() {
@@ -23,20 +24,21 @@ public class Authority {
 	}
 
 
-	public Authority(int id, String email, String authority) {
+	public Authority(Integer id, String email, String authority, Integer userId) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.authority = authority;
+		this.userId = userId;
 	}
 
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -59,11 +61,19 @@ public class Authority {
 	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
+
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
 	
-	
-	
-	
-	
+
+
 	
 	
 	
