@@ -1,0 +1,18 @@
+
+
+********************************** Spring Security ****************************
+
+
+Spring_security_1  =   This is first Spring Boot Application Using spring security. 
+                     I added spring security dependency and It is giving default 
+                     username and password. i dont want to authanticated all API
+                     so used SecurityFilterChain to authanticat only some api, not all.
+                     Api is returning only String Message so i used @RestController. 
+
+
+spring_security1b  =  This is Second Spring Boot Application Using spring security. 
+                     I added spring security dependency and Username And password 
+                     placed in application.properties file. Now Spring security not 
+                     giving default username password. I also Returned JSP page
+                     in This application.  i dont want to authanticated all API so
+                     used SecurityFilterChain to authanticat only some api, not all. 
