@@ -124,7 +124,7 @@
 		
 		<form th:action="/login" method="post">
 			<div  class="form-group">
-			<input type="text" name="username" placeholder="Username or Email"/>
+			<input type="text" name="username" placeholder="Username"/>
 			</div>
 			<div  class="form-group">
 			<input type="password" name="password" placeholder="Password"/>

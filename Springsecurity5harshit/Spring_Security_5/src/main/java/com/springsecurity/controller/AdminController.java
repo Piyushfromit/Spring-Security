@@ -29,7 +29,7 @@ public class AdminController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(UserInfo userInfo)
+	public String registerUser( UserInfo userInfo)
 	{
 		System.out.println("registered");
 		this.service.addUser(userInfo);

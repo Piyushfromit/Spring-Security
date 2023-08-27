@@ -128,10 +128,10 @@
       </div>
       
      <div class="form-group">
-        <select name="role"  required>
+        <select name="roles"  required>
         <option selected disabled>Choose Role</option>
-        <option value="Admin" >Admin</option>
-        <option value="User" >User</option>
+        <option  value="ROLE_ADMIN" >Admin</option>
+        <option value="ROLE_USER" >User</option>
         </select>
       </div> 
       <div class="form-group">
