@@ -16,3 +16,20 @@ spring_security1b  =  This is Second Spring Boot Application Using spring securi
                      giving default username password. I also Returned JSP page
                      in This application.  i dont want to authanticated all API so
                      used SecurityFilterChain to authanticat only some api, not all. 
+
+
+Springsecurity2  =  This is Third Spring Boot Application Using spring security. 
+                    in this project i am using InMemoryUserDetailsManager to store 
+                    static user and password, also used role based authantication.
+                    using SecurityFilterChain, I also Returned JSP page
+                    used java 17, Spring Boot 3.0.1 version
+
+*** Good One ***
+Springsecurity3  =  This is Fourth Spring Boot Application Using spring security. 
+                    in this project i am using MYSQL database to to store the user
+                    details. This application has full flow of login and reguster the user. 
+                    i also used role based authantication.using SecurityFilterChain, 
+                    I also Returned JSP page used java 17, Spring Boot 3.0.1 version
+
+
+
