@@ -43,4 +43,10 @@ Springsecurity5  =  This is Sixth Spring Boot Application Using spring security.
                     this is same as project Springsecurity3.
                     Diffrence is thaat i used java 1.8 and spring boot 2.7.7 version.
 
+*** Good One ***
+Springsecurity6  =  This is Sixth Spring Boot Application Using spring security. 
+                    this is same as project Springsecurity3.
+                    Diffrence is thaat Springsecurity3 u can login using username and password 
+                    but in Springsecurity6 you can login with mailId and password.
+
 
