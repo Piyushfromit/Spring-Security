@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+
+body, h1, h2, h3, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply global styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Home page Header ############################################## */
+
+.site-header {
+    background-color: #f22222;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    min-height:40px; 
+}
+
+.logo img {
+    max-height: 35px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav li {
+    margin: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.user-actions a:hover {
+    background-color: white;
+    color: #f15222;
+}
+  
+/* Registration Form ############################################### */
+/* body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+.regform {
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 8%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.regform h2 {
+    text-align: center;
+    color: #f22222;
+    margin: 15px;
+}
+.regform p{
+	text-align: center;
+	font-size: 14px;
+}
+.regform .form-group {
+	
+    margin-bottom: 20px;
+}
+
+.regform input[type="text"],
+.regform input[type="tel"],
+.regform input[type="email"],
+.regform input[type="password"] {
+    width: 92%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.regform input[type="submit"] {
+	text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #f22222; /* Updated color theme */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+     
+}
+
+.regform input[type="submit"]:hover {
+    background-color: #ffffff; /* White for hover */
+    color: #f22222; /* Text color on hover */
+    border: 1px solid #f22222;
+}
+/* Media query for screens up to 480px (small smartphones) */
+@media screen and (max-width: 480px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+    }
+
+    .user-actions {
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Media query for screens between 481px and 768px (larger smartphones and small tablets) */
+/* @media screen and (min-width: 481px) and (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+    }
+} */
+/* 
+Media query for screens between 769px and 1024px (tablets and small laptops)
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    Add styles for tablets/small laptops here
+} */
+/* 
+Media query for screens above 1024px (desktops and larger)
+@media screen and (min-width: 1025px) {
+    Add styles for desktops and larger screens here
+}
+ */
