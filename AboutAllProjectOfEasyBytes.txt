@@ -4,5 +4,9 @@
 
 
 
+springsecuritybyeazybytes_1:   user name password is in Application.properties and all URL is Authanticated
 
+springsecuritybyeazybytes_2:   user name password is in Application.properties and custome URL Authanticated
 
+springsecuritybyeazybytes_3:   user name password is in InMemoryUserDetailsManager and custome URL Authanticated
+                               InMemoryUserDetailsManager in this way we can add more then one user
