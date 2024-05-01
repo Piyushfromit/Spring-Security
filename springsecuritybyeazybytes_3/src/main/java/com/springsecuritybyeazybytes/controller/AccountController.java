@@ -9,7 +9,7 @@ public class AccountController {
 
 
     @GetMapping("/myAccount")
-    public String myAccount(){
+    public String myAccount() {
 
         return "My Account Details From Database";
 
