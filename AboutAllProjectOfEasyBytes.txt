@@ -10,3 +10,10 @@ springsecuritybyeazybytes_2:   user name password is in Application.properties a
 
 springsecuritybyeazybytes_3:   user name password is in InMemoryUserDetailsManager and custome URL Authanticated
                                InMemoryUserDetailsManager in this way we can add more then one user
+
+
+springsecuritybyeazybytes_3b:  user name password is on serve in users table, used JdbcUserDetailsManager but 
+                               JdbcUserDetailsManager is note good for production besd application  because it is not scalable
+                               the fild of Users table is already defined, we can not change of modifie it.
+                               ** Now in same project created own custom customer table and and own logic to login 
+                               by customer table, not Users table
