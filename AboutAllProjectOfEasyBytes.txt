@@ -15,5 +15,8 @@ springsecuritybyeazybytes_3:   user name password is in InMemoryUserDetailsManag
 springsecuritybyeazybytes_3b:  user name password is on serve in users table, used JdbcUserDetailsManager but 
                                JdbcUserDetailsManager is note good for production besd application  because it is not scalable
                                the fild of Users table is already defined, we can not change of modifie it.
-                               ** Now in same project created own custom customer table and and own logic to login 
-                               by customer table, not Users table
+                               ** Now in same project created own custom customer table and own logic to login 
+                               by customer table, not Users table.
+
+springsecuritybyeazybytes_4    created own custom customer table and own logic to login 
+                               by customer data, written register logic used BCryptPasswordEncoder  

@@ -22,6 +22,8 @@ public class EazyBankUserDetails implements UserDetailsService {
     @Autowired
     CustomerRepository customerRepository;
 
+
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 

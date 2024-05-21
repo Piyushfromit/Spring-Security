@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
@@ -33,25 +34,16 @@ public class ProjectSecurityConfig {
         )
         .formLogin(withDefaults())
         .httpBasic(withDefaults())
-                 .csrf(csrf -> csrf.disable());
+        .csrf(csrf -> csrf.disable());
+
+
      return  http.build();
     }
 
 
-    // JdbcUserDetailsManager is note good for production besd application  because it is not scalable
-    // the fild of Users table is already defined, we can not change of modifie it.
-//    @Bean
-//    public UserDetailsService userDetailsService(DataSource dataSource){
-//
-//        return new JdbcUserDetailsManager(dataSource);
-//
-//    }
-
-    // By commenting this code, my custome logic EaszyBankUserDetails will Work with Customer table, not users table
-
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
     }
 
 
