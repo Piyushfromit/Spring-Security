@@ -20,3 +20,20 @@ springsecuritybyeazybytes_3b:  user name password is on serve in users table, us
 
 springsecuritybyeazybytes_4    created own custom customer table and own logic to login 
                                by customer data, written register logic used BCryptPasswordEncoder  
+
+
+cmd to run angular project
+PS D:\Piyush\Spring Security\Spring-Security\springsecuritybyeazybytes_6\00_UI_Initial Code\bank-app-ui> ng serve
+ng : File C:\Users\Piyush\AppData\Roaming\npm\ng.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ ng serve
++ ~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+PS D:\Piyush\Spring Security\Spring-Security\springsecuritybyeazybytes_6\00_UI_Initial Code\bank-app-ui> Get-ExecutionPolicy
+Restricted
+PS D:\Piyush\Spring Security\Spring-Security\springsecuritybyeazybytes_6\00_UI_Initial Code\bank-app-ui> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS D:\Piyush\Spring Security\Spring-Security\springsecuritybyeazybytes_6\00_UI_Initial Code\bank-app-ui> Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+PS D:\Piyush\Spring Security\Spring-Security\springsecuritybyeazybytes_6\00_UI_Initial Code\bank-app-ui> Get-ExecutionPolicy -Scope CurrentUser
+Unrestricted
+PS D:\Piyush\Spring Security\Spring-Security\springsecuritybyeazybytes_6\00_UI_Initial Code\bank-app-ui> ng serve
