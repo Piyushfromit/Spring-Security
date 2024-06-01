@@ -1,20 +1,20 @@
 package com.springsecuritybyeazybytes.securityconfig;
 
 
+import com.springsecuritybyeazybytes.filter.CsrfCookieFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import org.springframework.security.crypto.password.PasswordEncoder;
-
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
 
 import java.util.Arrays;
 
@@ -25,21 +25,30 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 public class ProjectSecurityConfig {
     // doc Link :     https://docs.spring.io/spring-security/reference/servlet/configuration/java.html
+
+
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-         http
+
+        CsrfTokenRequestAttributeHandler csrfTokenRequestAttributeHandler = new CsrfTokenRequestAttributeHandler();
+        csrfTokenRequestAttributeHandler.setCsrfRequestAttributeName("_csrf");
+
+
+        http
             .authorizeHttpRequests(authorize -> authorize
             .requestMatchers("/myAccount", "/myBalance", "/myCards", "/myLone", "/user").authenticated()
             .requestMatchers("/welcome", "/contactUs", "/notices", "/register").permitAll()
             .anyRequest().permitAll()
 
         )
-         .cors((cors) -> cors
-                 .configurationSource(eazyBankCorsConfiguration())
-         )
+        .cors((cors) -> cors.configurationSource(eazyBankCorsConfiguration()))
+        .csrf((csrf) -> csrf.csrfTokenRequestHandler(csrfTokenRequestAttributeHandler).ignoringRequestMatchers("/register", "/contactUs")
+        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
+        .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
+
         .formLogin(withDefaults())
-        .httpBasic(withDefaults())
-        .csrf(csrf -> csrf.disable());
+        .httpBasic(withDefaults());
+
      return  http.build();
     }
 
