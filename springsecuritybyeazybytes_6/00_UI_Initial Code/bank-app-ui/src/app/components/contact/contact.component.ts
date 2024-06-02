@@ -25,6 +25,7 @@ export class ContactComponent implements OnInit {
     this.dashboardService.saveMessage(this.model).subscribe(
       responseData => {
         this.model = <any> responseData.body;
+
         contactForm.resetForm();
       });
 

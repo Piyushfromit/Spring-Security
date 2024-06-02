@@ -52,7 +52,7 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`name`, `email`, `mobile_number`, `pwd`, `role`, `create_dt`)
 VALUES ('Happy', 'happy@example.com', '9876548337', '$2a$12$oXaPi7/x6FtIeoSrXLQRiuFW2jHbAOcaJpLlzOqvNRsRQw6KhtM6S', 'admin', CURDATE());
-pwd = 12345
+//   pwd = 123456
 
 
 CREATE TABLE `accounts` (

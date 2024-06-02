@@ -19,6 +19,7 @@ public class ContactController {
 
     @PostMapping("/contact")
     public Contact saveContactInquiryDetails(@RequestBody Contact contact) {
+        System.out.println("Contact saved dear piyush");
         contact.setContactId(getServiceReqNumber());
         contact.setCreateDt(new Date(System.currentTimeMillis()));
         return contactRepository.save(contact);
