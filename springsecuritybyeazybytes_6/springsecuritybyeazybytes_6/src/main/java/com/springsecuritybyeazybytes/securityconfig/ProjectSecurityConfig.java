@@ -34,14 +34,10 @@ public class ProjectSecurityConfig {
         csrfTokenRequestAttributeHandler.setCsrfRequestAttributeName("_csrf");
 
         http
+                .securityContext((context) -> context
+                        .requireExplicitSave(false))
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
-                )
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/myAccount", "/myBalance", "/myCards", "/myLone", "/user", "/contact").authenticated()
-                        .requestMatchers( "/notices", "/register").permitAll()
-                        .anyRequest().permitAll()
-
                 )
                 .cors(cors -> cors.configurationSource(eazyBankCorsConfiguration()))
                 .csrf(csrf -> csrf
@@ -49,6 +45,12 @@ public class ProjectSecurityConfig {
                         .csrfTokenRequestHandler(csrfTokenRequestAttributeHandler)
                         .ignoringRequestMatchers("/register" )
                 ).addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/myAccount", "/myBalance", "/myCards", "/myLone", "/user", "/contact").authenticated()
+                        .requestMatchers( "/notices", "/register").permitAll()
+                        .anyRequest().permitAll()
+
+                )
 
                 .formLogin(withDefaults())
                 .httpBasic(withDefaults());
