@@ -30,7 +30,7 @@ public class ProjectSecurityConfig {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 
-        XorCsrfTokenRequestAttributeHandler csrfTokenRequestAttributeHandler = new XorCsrfTokenRequestAttributeHandler();
+        CsrfTokenRequestAttributeHandler csrfTokenRequestAttributeHandler = new XorCsrfTokenRequestAttributeHandler();
         csrfTokenRequestAttributeHandler.setCsrfRequestAttributeName("_csrf");
 
         http
@@ -48,7 +48,6 @@ public class ProjectSecurityConfig {
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                         .csrfTokenRequestHandler(csrfTokenRequestAttributeHandler)
                         .ignoringRequestMatchers("/register" )
-
                 ).addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
 
                 .formLogin(withDefaults())
