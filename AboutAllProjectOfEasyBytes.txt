@@ -23,7 +23,7 @@ springsecuritybyeazybytes_4    created own custom customer table and own logic t
 
 springsecuritybyeazybytes_5    created own custom customer table and own authantication provider
 
-springsecuritybyeazybytes_5    created own custom customer table and own authantication provider
+springsecuritybyeazybytes_6    created own custom customer table and own authantication provider
                                Used CORS and CSRF
 
 
