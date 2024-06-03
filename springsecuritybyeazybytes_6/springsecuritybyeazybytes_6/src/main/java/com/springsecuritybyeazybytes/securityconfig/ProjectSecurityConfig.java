@@ -3,6 +3,7 @@ package com.springsecuritybyeazybytes.securityconfig;
 import com.springsecuritybyeazybytes.filter.CsrfCookieFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -30,17 +31,17 @@ public class ProjectSecurityConfig {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 
-        CsrfTokenRequestAttributeHandler csrfTokenRequestAttributeHandler = new XorCsrfTokenRequestAttributeHandler();
-        csrfTokenRequestAttributeHandler.setCsrfRequestAttributeName("_csrf");
+         CsrfTokenRequestAttributeHandler csrfTokenRequestAttributeHandler = new CsrfTokenRequestAttributeHandler();
+         csrfTokenRequestAttributeHandler.setCsrfRequestAttributeName("_csrf");
 
-        http
+         http
                 .securityContext((context) -> context
                         .requireExplicitSave(false))
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
                 )
                 .cors(cors -> cors.configurationSource(eazyBankCorsConfiguration()))
-                .csrf(csrf -> csrf
+                .csrf(  csrf -> csrf
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                         .csrfTokenRequestHandler(csrfTokenRequestAttributeHandler)
                         .ignoringRequestMatchers("/register" )
@@ -48,20 +49,21 @@ public class ProjectSecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/myAccount", "/myBalance", "/myCards", "/myLone", "/user", "/contact").authenticated()
                         .requestMatchers( "/notices", "/register").permitAll()
-                        .anyRequest().permitAll()
-
                 )
-                .formLogin(withDefaults())
-                .httpBasic(withDefaults());
 
-        return http.build();
+               .formLogin(Customizer.withDefaults())
+               .httpBasic(Customizer.withDefaults());
+
+         return http.build();
+
+
     }
 
     @Bean
     CorsConfigurationSource eazyBankCorsConfiguration() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(Arrays.asList("http://localhost:4200")); // "*"
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // "*"
+        config.setAllowedMethods(Collections.singletonList("*")); // "*"
         config.setAllowCredentials(true);
         config.setAllowedHeaders(Collections.singletonList("*"));
         config.setMaxAge(3600L);
@@ -70,9 +72,12 @@ public class ProjectSecurityConfig {
         return source;
     }
 
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
 
 }
