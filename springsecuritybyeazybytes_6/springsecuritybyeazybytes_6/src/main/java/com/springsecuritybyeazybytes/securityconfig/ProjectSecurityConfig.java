@@ -51,7 +51,6 @@ public class ProjectSecurityConfig {
                         .anyRequest().permitAll()
 
                 )
-
                 .formLogin(withDefaults())
                 .httpBasic(withDefaults());
 
