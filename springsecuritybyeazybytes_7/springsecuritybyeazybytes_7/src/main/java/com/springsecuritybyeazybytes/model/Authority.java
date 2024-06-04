@@ -4,15 +4,12 @@ package com.springsecuritybyeazybytes.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3d75986406546d0ed93775703e4225f43b7b65b4
 @Entity
 @Table(name = "authorities")
 public class Authority {
 
-<<<<<<< HEAD
+
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
@@ -21,21 +18,9 @@ public class Authority {
 
     private String name;
 
-
     @ManyToMany
     @JoinColumn(name = "customer_id")
-    private Customer customer;;;;;
-=======
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO,generator ="native")
-    @GenericGenerator(name="native",strategy="native")
-   private  Long id;
-   private  String name;
-
-
-   @ManyToOne
-   @JoinColumn(name = "customer_id")
-   private Customer customer;
+    private Customer customer;
 
 
     public Long getId() {
@@ -61,5 +46,5 @@ public class Authority {
     public void setName(String name) {
         this.name = name;
     }
->>>>>>> 3d75986406546d0ed93775703e4225f43b7b65b4
+
 }
