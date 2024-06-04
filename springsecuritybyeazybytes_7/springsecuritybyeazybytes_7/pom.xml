@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springsecuritybyeazybytes</groupId>
-	<artifactId>springsecuritybyeazybytes_6</artifactId>
+	<artifactId>springsecuritybyeazybytes_7</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springsecuritybyeazybytes_6</name>
+	<name>springsecuritybyeazybytes_7</name>
 	<description>Demo project for Spring security by Eazy bytes</description>
 	<properties>
 		<java.version>17</java.version>
