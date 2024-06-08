@@ -1,5 +1,6 @@
 package com.springsecuritybyeazybytes.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -30,6 +31,7 @@ public class Customer {
     @Column(name = "create_dt")
     private String createDt;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "customer",fetch=FetchType.EAGER)
     private Set<Authority> authorities;
 

@@ -47,7 +47,18 @@ public class ProjectSecurityConfig {
                         .ignoringRequestMatchers("/register" )
                 ).addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/myAccount", "/myBalance", "/myCards", "/myLone", "/user", "/contact").authenticated()
+//                        .requestMatchers("/myAccount").hasAuthority("VIEWACCOUNT")
+//                        .requestMatchers("/myBalance").hasAnyAuthority("VIEWACCOUNT", "VIEWBALANCE")
+//                        .requestMatchers("/myLoans").hasAuthority("VIEWLOANS")
+//                        .requestMatchers("/myCards").hasAuthority("VIEWCARDS")
+
+                        .requestMatchers("/myAccount").hasRole("USER")
+                        .requestMatchers("/myBalance").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/myLoans").hasRole("USER")
+                        .requestMatchers("/myCards").hasRole("USER")
+
+                        .requestMatchers( "/user").authenticated()
+//                        .requestMatchers("/myAccount", "/myBalance", "/myCards", "/myLoans", "/user", "/contact").authenticated()
                         .requestMatchers( "/notices", "/register").permitAll()
                 )
 
@@ -55,8 +66,6 @@ public class ProjectSecurityConfig {
                .httpBasic(Customizer.withDefaults());
 
          return http.build();
-
-
     }
 
     @Bean
