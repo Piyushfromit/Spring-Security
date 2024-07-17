@@ -39,8 +39,6 @@ public class EazyBankUsernameAuthenticationProvider implements AuthenticationPro
 
         if(customer.size() > 0){
             if(passwordEncoder.matches(pwd, customer.get(0).getPwd())){
-                //List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-                //grantedAuthorities.add(new SimpleGrantedAuthority(customer.get(0).getRole()));
                 return new UsernamePasswordAuthenticationToken(username, pwd, getGrantedAuthoities(customer.get(0).getAuthorities()));
             }else{
                 throw new BadCredentialsException("Invalid password");

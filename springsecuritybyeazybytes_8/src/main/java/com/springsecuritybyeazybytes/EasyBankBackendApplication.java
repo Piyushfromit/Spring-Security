@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 @SpringBootApplication
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 public class EasyBankBackendApplication {
 
 	public static void main(String[] args) {
